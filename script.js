@@ -21,3 +21,17 @@ function getHumanChoice() {
     
     return userChoice;
 }
+
+function playRound(humanChoice, computerChoice) {
+
+    if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")) {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    } else if (humanChoice === computerChoice) {
+        console.log("It's a tie");
+    }
+    else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+    }
+}
