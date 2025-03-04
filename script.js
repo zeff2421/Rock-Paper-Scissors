@@ -55,3 +55,6 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie!")
     }
 } */
+
+const buttons = document.querySelectorAll("button");
+const body = document.querySelector("body");
