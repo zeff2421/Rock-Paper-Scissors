@@ -67,3 +67,14 @@ const divBtns = document.createElement("div");
 divBtns.classList.add("buttons");
 buttons.forEach(node => divBtns.appendChild(node));
 body.appendChild(divBtns);
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        let buttonClicked = button.id;
+        let computerChoice = getComputerChoice();
+        playRound(buttonClicked, computerChoice);
+
+        console.log(`Player: ${buttonClicked}`);
+        console.log(`Computer: ${computerChoice}`);
+    });
+});
