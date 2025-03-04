@@ -58,3 +58,7 @@ function playRound(humanChoice, computerChoice) {
 
 const buttons = document.querySelectorAll("button");
 const body = document.querySelector("body");
+
+const resultDiv = document.createElement("div");
+resultDiv.classList.add("results");
+body.appendChild(resultDiv);
