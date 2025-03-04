@@ -62,3 +62,8 @@ const body = document.querySelector("body");
 const resultDiv = document.createElement("div");
 resultDiv.classList.add("results");
 body.appendChild(resultDiv);
+
+const divBtns = document.createElement("div");
+divBtns.classList.add("buttons");
+buttons.forEach(node => divBtns.appendChild(node));
+body.appendChild(divBtns);
