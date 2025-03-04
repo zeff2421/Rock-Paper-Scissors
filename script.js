@@ -37,25 +37,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-/* function playGame() {
-    
-
-    for (let round = 0; round < ROUNDS; round++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice); 
-    }
-
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You won!");
-    } else if (humanScore < computerScore) {
-        console.log("Oops! You lost.");
-    }
-    else {
-        console.log("It's a tie!")
-    }
-} */
-
 const buttons = document.querySelectorAll("button");
 const body = document.querySelector("body");
 
