@@ -6,4 +6,93 @@ body {
     font-variation-settings:
       "MORF" 13,
       "SHLN" 20.4;
+
+      margin: 0;
+      padding: 0 220px;
+      background: linear-gradient(90deg, rgba(46, 44, 45, 1) 0%, rgba(66, 64, 61, 1) 100%)
   }
+
+  .heading {
+    animation: heading-load 1900ms ease-out;
+  }
+
+  .heading,
+  .results {
+    font-size: 100px;
+    text-align: center;
+  }
+
+img {
+    width: 300px;
+    height: 300px;
+  }
+
+.playerScore,
+.compScore {
+    text-align: center;
+}
+
+.avatars {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 400px;
+    animation: avatars-load 2300ms ease-out;
+}
+
+.compScore,
+.playerScore,
+.versus {
+    font-size: 100px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 200px;
+    animation: buttons-load 2600ms ease-out;
+}
+
+button {
+    font-size: 50px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    outline: none;
+    border: 8px solid #090909;
+    background: linear-gradient(145deg, #171717, #444245);
+    box-shadow: inset 2px 2px 0px #7d7c7e, inset -2px -2px 0px #1c1c1c;
+    color: wheat;
+}
+
+.results {
+    height: 130px;
+    width: auto;
+}
+
+
+@keyframes heading-load {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes avatars-load {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes buttons-load {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
