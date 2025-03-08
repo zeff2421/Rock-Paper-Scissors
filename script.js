@@ -26,14 +26,15 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
 
     if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")) {
-        console.log(`${humanChoice} beats ${computerChoice}`);
         humanScore++;
+        return "Won";
     } else if (humanChoice === computerChoice) {
-        console.log("It's a tie");
+        return "Tie";
     }
     else {
         console.log(`${humanChoice} loses to ${computerChoice}`);
         computerScore++;
+        return "Lost"
     }
 }
 
@@ -53,9 +54,13 @@ buttons.forEach((button) => {
     button.addEventListener("click", () => {
         let buttonClicked = button.id;
         let computerChoice = getComputerChoice();
-        playRound(buttonClicked, computerChoice);
+        let round = playRound(buttonClicked, computerChoice);
 
-        console.log(`Player: ${buttonClicked}`);
-        console.log(`Computer: ${computerChoice}`);
+        if (round === "Won")
+            resultDiv.textContent = `You won! ${buttonClicked} beats ${computerChoice}.`;
+        else if (round === "Lost")
+            resultDiv.textContent = `You lost! ${buttonClicked} loses to ${computerChoice}.`;
+        else
+            resultDiv.textContent = `It's a tie.`
     });
 });
