@@ -40,18 +40,16 @@ function playRound(humanChoice, computerChoice) {
 
 const buttons = document.querySelectorAll("button");
 const body = document.querySelector("body");
+const btns = document.querySelector(".buttons")
 
 const resultDiv = document.createElement("div");
 resultDiv.classList.add("results");
-body.appendChild(resultDiv);
-
-const divBtns = document.createElement("div");
-divBtns.classList.add("buttons");
-buttons.forEach(node => divBtns.appendChild(node));
-body.appendChild(divBtns);
+body.insertBefore(resultDiv, btns);
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
+        button.classList.add("button-clicked");
+        
         let buttonClicked = button.id;
         let computerChoice = getComputerChoice();
         let round = playRound(buttonClicked, computerChoice);
