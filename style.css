@@ -64,11 +64,6 @@ button {
     color: wheat;
 }
 
-.button-clicked {
-  background: linear-gradient(-185deg, #131313, #444245);
-  box-shadow: inset -2px -2px 0px #5e5e5e, inset 2px 2px 0px #1c1c1c;
-}
-
 .results {
     height: 130px;
     width: auto;

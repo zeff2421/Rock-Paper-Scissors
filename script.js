@@ -48,8 +48,6 @@ body.insertBefore(resultDiv, btns);
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        button.classList.add("button-clicked");
-        
         let buttonClicked = button.id;
         let computerChoice = getComputerChoice();
         let round = playRound(buttonClicked, computerChoice);
@@ -59,6 +57,6 @@ buttons.forEach((button) => {
         else if (round === "Lost")
             resultDiv.textContent = `You lost! ${buttonClicked} loses to ${computerChoice}.`;
         else
-            resultDiv.textContent = `It's a tie.`
+            resultDiv.textContent = `It's a tie.`;
     });
 });
