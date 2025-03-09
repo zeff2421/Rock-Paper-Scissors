@@ -32,7 +32,6 @@ function playRound(humanChoice, computerChoice) {
         return "Tie";
     }
     else {
-        console.log(`${humanChoice} loses to ${computerChoice}`);
         computerScore++;
         return "Lost"
     }
@@ -40,7 +39,9 @@ function playRound(humanChoice, computerChoice) {
 
 const buttons = document.querySelectorAll("button");
 const body = document.querySelector("body");
-const btns = document.querySelector(".buttons")
+const btns = document.querySelector(".buttons");
+const playerScore = document.querySelector(".playerScore");
+const compScore = document.querySelector(".compScore");
 
 const resultDiv = document.createElement("div");
 resultDiv.classList.add("results");
@@ -52,11 +53,16 @@ buttons.forEach((button) => {
         let computerChoice = getComputerChoice();
         let round = playRound(buttonClicked, computerChoice);
 
-        if (round === "Won")
-            resultDiv.textContent = `You won! ${buttonClicked} beats ${computerChoice}.`;
-        else if (round === "Lost")
-            resultDiv.textContent = `You lost! ${buttonClicked} loses to ${computerChoice}.`;
-        else
-            resultDiv.textContent = `It's a tie.`;
+        if (round === "Won") {
+            playerScore.textContent = `${humanScore}`;
+            resultDiv.textContent = `${buttonClicked} beats ${computerChoice}`;
+        }
+        else if (round === "Lost") {
+            compScore.textContent = `${computerScore}`;
+            resultDiv.textContent = `${buttonClicked} loses to ${computerChoice}`;
+        }
+        else {
+            resultDiv.textContent = `It's a Tie`;
+        }
     });
 });
