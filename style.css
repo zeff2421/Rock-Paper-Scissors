@@ -39,6 +39,19 @@ img {
     animation: avatars-load 2300ms ease-out;
 }
 
+.human-pictures,
+.computer-pictures {
+  display: flex;
+}
+.result-img,
+.result-img {
+  object-fit: contain;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  align-self: flex-end;
+}
+
 .compScore,
 .playerScore,
 .versus {
