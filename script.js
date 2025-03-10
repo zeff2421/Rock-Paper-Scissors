@@ -37,6 +37,14 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function displayChosen(humanChoice, computerChoice) {
+    let humanDisplay = document.querySelector(".human-pictures .result-img");
+    let computerDisplay = document.querySelector(".computer-pictures .result-img");
+
+    humanDisplay.src = `./images/${humanChoice}.png`;
+    computerDisplay.src = `./images/${computerChoice}.png`;
+}
+
 const buttons = document.querySelectorAll("button");
 const body = document.querySelector("body");
 const btns = document.querySelector(".buttons");
@@ -52,6 +60,7 @@ buttons.forEach((button) => {
         let buttonClicked = button.id;
         let computerChoice = getComputerChoice();
         let round = playRound(buttonClicked, computerChoice);
+        displayChosen(buttonClicked, computerChoice);
 
         if (round === "Won") {
             playerScore.textContent = `${humanScore}`;
