@@ -1,4 +1,3 @@
-const ROUNDS = 5;
 let humanScore = 0;
 let computerScore = 0;
 
@@ -45,11 +44,13 @@ function displayChosen(humanChoice, computerChoice) {
     computerDisplay.src = `./images/${computerChoice}.png`;
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".btn");
 const body = document.querySelector("body");
 const btns = document.querySelector(".buttons");
 const playerScore = document.querySelector(".playerScore");
 const compScore = document.querySelector(".compScore");
+
+let modal = document.querySelector(".modal");
 
 const resultDiv = document.createElement("div");
 resultDiv.classList.add("results");
@@ -65,10 +66,16 @@ buttons.forEach((button) => {
         if (round === "Won") {
             playerScore.textContent = `${humanScore}`;
             resultDiv.textContent = `${buttonClicked} beats ${computerChoice}`;
+            if (humanScore === 5) {
+                modal.showModal();
+            }
         }
         else if (round === "Lost") {
             compScore.textContent = `${computerScore}`;
             resultDiv.textContent = `${buttonClicked} loses to ${computerChoice}`;
+            if (computerScore === 5) {
+                modal.showModal();
+            }
         }
         else {
             resultDiv.textContent = `It's a Tie`;
