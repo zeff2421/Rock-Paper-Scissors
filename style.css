@@ -34,7 +34,7 @@ img {
 
 .avatars {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 30px 400px;
     animation: avatars-load 2300ms ease-out;
 }
