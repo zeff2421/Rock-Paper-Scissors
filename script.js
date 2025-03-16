@@ -45,9 +45,11 @@ function displayChosen(humanChoice, computerChoice) {
         humanDisplay.src = "";
         computerDisplay.src = "";
     }
-
-    humanDisplay.src = `./images/${humanChoice}.png`;
-    computerDisplay.src = `./images/${computerChoice}.png`;
+    else
+    {
+        humanDisplay.src = `./images/${humanChoice}.png`;
+        computerDisplay.src = `./images/${computerChoice}.png`;
+    }
 }
 
 const buttons = document.querySelectorAll(".btn");
