@@ -40,6 +40,12 @@ function displayChosen(humanChoice, computerChoice) {
     let humanDisplay = document.querySelector(".human-pictures .result-img");
     let computerDisplay = document.querySelector(".computer-pictures .result-img");
 
+    if (humanChoice === "" && computerChoice === "")
+    {
+        humanDisplay.src = "";
+        computerDisplay.src = "";
+    }
+
     humanDisplay.src = `./images/${humanChoice}.png`;
     computerDisplay.src = `./images/${computerChoice}.png`;
 }
@@ -51,6 +57,7 @@ const playerScore = document.querySelector(".playerScore");
 const compScore = document.querySelector(".compScore");
 
 let modal = document.querySelector(".modal");
+let modalResults = document.querySelector(".modal-result");
 
 const resultDiv = document.createElement("div");
 resultDiv.classList.add("results");
@@ -67,6 +74,7 @@ buttons.forEach((button) => {
             playerScore.textContent = `${humanScore}`;
             resultDiv.textContent = `${buttonClicked} beats ${computerChoice}`;
             if (humanScore === 5) {
+                modalResults.textContent = "Congratulations! You won.";
                 modal.showModal();
             }
         }
@@ -74,6 +82,7 @@ buttons.forEach((button) => {
             compScore.textContent = `${computerScore}`;
             resultDiv.textContent = `${buttonClicked} loses to ${computerChoice}`;
             if (computerScore === 5) {
+                modalResults.textContent = "Oops! You lost.";
                 modal.showModal();
             }
         }
@@ -82,3 +91,26 @@ buttons.forEach((button) => {
         }
     });
 });
+
+let modalButton = document.querySelector(".btn2");
+modalButton.addEventListener("click", () => {
+    humanScore = 0;
+    computerScore = 0;
+    playerScore.textContent = humanScore;
+    compScore.textContent = computerScore;
+    resultDiv.textContent = "";
+    displayChosen("", "");
+    modal.close();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape")
+    {
+        humanScore = 0;
+        computerScore = 0;
+        playerScore.textContent = humanScore;
+        compScore.textContent = computerScore;
+        resultDiv.textContent = "";
+        displayChosen("", "");
+    }
+})
